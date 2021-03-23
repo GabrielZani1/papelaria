@@ -1,0 +1,23 @@
+|=====================================================================================|
+|                                                                                     |
+|                          RELATÓRIO ATUAL TOTAL DO ESTOQUE                           |
+|                                                                                     |
+|=====================================================================================|
+|Nome da Loja: Papelaria Zani    CNPJ: 16.471.625/0001-71    IE: 00000004419049       |
+|Contato: (69) 992998877         Rua: Rua Kabum              N° 9154  Bairro: Incra   |
+|CEP: 76920-000                  Município: Ouro Preto do Oeste/RO                    |
+|=====================================================================================|
+|ID |Descrição do Produto       |Peso |Valor |Qtd |Categoria        |Fornecedor       |
+|=====================================================================================|
+| 1 |Calculadora Max            | 100g| 10.99| 4  |Estoque Regulador|Dell Computadores|
+| 2 |Canetinha colorida         | 300g|  1.99| 8  |Estoque de Ciclo |Faber Castell S.A|
+| 3 |Lapis Labrel               | 400g| 10.99| 60 |Estoque de Ciclo |Faber Castell S.A|
+| 4 |Kit Teclado e Mouse        | 500g| 144.9| 4  |Estoque Regulador|Dell Computadores|
+| 5 |Marcador Permanete         |  10g|  7.99| 15 |Estoque Regulador|Faber Castell S.A|
+| 6 |Caderno 400 folhas         | 300g| 36.99| 0  |Estoque Regulador|Tilibra          |
+| 7 |Caderno 300 folhas         | 300g| 26.99| 1  |Estoque Regulador|Tilibra          |
+| 8 |Caderno 200 folhas         | 200g| 16.99| 6  |Estoque Regulador|Tilibra          |
+|=====================================================================================|
+-> Relatório gerado: 23/03/2021 11:56
+
+

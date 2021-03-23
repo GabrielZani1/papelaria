@@ -1,0 +1,41 @@
+|=====================================================================================|
+|                                                                                     |
+|                    RELATÓRIO DE MOVIMENTAÇÃO POR PERÍODO DE DATA                    |
+|                      Período de Data: 01/01/2020 à 23/03/2021                       |
+|=====================================================================================|
+|Nome da Loja: Papelaria Zani    CNPJ: 16.471.625/0001-71    IE: 00000004419049       |
+|Contato: (69) 992998877         Rua: Rua Kabum              N° 9154  Bairro: Incra   |
+|CEP: 76920-000                  Município: Ouro Preto do Oeste/RO                    |
+|=====================================================================================|
+|                                     REGISTRO(S)                                     |
+|=====================================================================================|
+|ID:  1   Descrição do Produto: Calculadora Max           Lote: 980     Valor: 10.99  |
+|Qtd: 6   Data Movimentação: 19/03/2021 12:50             Tipo Movimentação: Entrada  |
+|-------------------------------------------------------------------------------------|
+|ID:  1   Descrição do Produto: Calculadora Max           Lote: 1234    Valor: 10.99  |
+|Qtd: 2   Data Movimentação: 22/03/2021 08:34             Tipo Movimentação: Saída    |
+|Cliente: Luzia Ferreira de Souza Zani                    CPF: 012.321.112-01         |
+|Fornecedor: Dell Computadores                            CNPJ: 01.236.541/0023-65    |
+|-------------------------------------------------------------------------------------|
+|ID:  2   Descrição do Produto: Canetinha colorida        Lote: 1234    Valor: 10.99  |
+|Qtd: 2   Data Movimentação: 22/03/2021 08:52             Tipo Movimentação: Saída    |
+|Cliente: Luzia                                           CPF: 012.369.998-74         |
+|Fornecedor: Faber Castell S.A                            CNPJ: 23.643.315/0115-10    |
+|-------------------------------------------------------------------------------------|
+|ID:  3   Descrição do Produto: Lapis Labrel              Lote: 1694    Valor: 10.99  |
+|Qtd: 1   Data Movimentação: 22/03/2021 09:09             Tipo Movimentação: Saída    |
+|Cliente: Angela Coelho                                   CPF: 123.256.695-10         |
+|Fornecedor: Faber Castell S.A                            CNPJ: 23.643.315/0115-10    |
+|-------------------------------------------------------------------------------------|
+|ID:  5   Descrição do Produto: Marcador Permanete        Lote: 1234    Valor: 7.99   |
+|Qtd: 5   Data Movimentação: 19/03/2021 12:45             Tipo Movimentação: Entrada  |
+|-------------------------------------------------------------------------------------|
+|ID:  5   Descrição do Produto: Marcador Permanete        Lote: 1203    Valor: 7.99   |
+|Qtd: 3   Data Movimentação: 19/03/2021 12:46             Tipo Movimentação: Entrada  |
+|-------------------------------------------------------------------------------------|
+|ID:  5   Descrição do Produto: Marcador Permanete        Lote: 1320    Valor: 7.99   |
+|Qtd: 2   Data Movimentação: 19/03/2021 12:47             Tipo Movimentação: Entrada  |
+|=====================================================================================|
+-> Relatório gerado: 23/03/2021 14:10
+
+

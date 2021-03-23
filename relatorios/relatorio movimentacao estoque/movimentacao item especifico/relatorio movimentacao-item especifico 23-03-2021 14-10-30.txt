@@ -1,0 +1,22 @@
+|=====================================================================================|
+|                                                                                     |
+|                    RELATÓRIO DE MOVIMENTAÇÃO DO ESTOQUE POR ITEM                    |
+|                                                                                     |
+|=====================================================================================|
+|Nome da Loja: Papelaria Zani    CNPJ: 16.471.625/0001-71    IE: 00000004419049       |
+|Contato: (69) 992998877         Rua: Rua Kabum              N° 9154  Bairro: Incra   |
+|CEP: 76920-000                  Município: Ouro Preto do Oeste/RO                    |
+|=====================================================================================|
+|                                     REGISTRO(S)                                     |
+|=====================================================================================|
+|ID:  1   Descrição do Produto: Calculadora Max           Lote: 980     Valor: 10.99  |
+|Qtd: 6   Data Movimentação: 19/03/2021 12:50             Tipo Movimentação: Entrada  |
+|-------------------------------------------------------------------------------------|
+|ID:  1   Descrição do Produto: Calculadora Max           Lote: 1234    Valor: 10.99  |
+|Qtd: 2   Data Movimentação: 22/03/2021 08:34             Tipo Movimentação: Saída    |
+|Cliente: Luzia Ferreira de Souza Zani                    CPF: 012.321.112-01         |
+|Fornecedor: Dell Computadores                            CNPJ: 01.236.541/0023-65    |
+|=====================================================================================|
+-> Relatório gerado: 23/03/2021 14:10
+
+
