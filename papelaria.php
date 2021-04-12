@@ -97,7 +97,7 @@ function cadastroClienteFornecedor($tipo_cad) {
         $regEst = $retornoEst->fetchAll(PDO::FETCH_OBJ); 
 
         echo "\n|=========================================================================|\n";    
-        echo "|                                  Estados                                |\n";    
+        echo "|                                  Estados  123                           |\n";    
         echo "|=========================================================================|\n";    
         foreach ($regEst as $estado) {        
             echo "|".mb_str_pad($estado->id_estado."-".$estado->nome_estado, 23, " ")."|";         
@@ -559,7 +559,7 @@ function relatorioEstoque($opcao_relatorio) {
     $relatorio .= "|".mb_str_pad("RELATÓRIO ATUAL ".$desc_relatorio, 85, " ", STR_PAD_BOTH)."|\n";
     $relatorio .= "|                                                                                     |\n";
     $relatorio .= "|=====================================================================================|\n";
-    $relatorio .= registroLoja();
+    $relatorio .= registroLoja(1);
     $relatorio .= "|=====================================================================================|\n";
     $relatorio .= "|ID |Descrição do Produto       |Peso |Valor |Qtd |Categoria        |Fornecedor       |\n";
     $relatorio .= "|=====================================================================================|\n";
@@ -582,8 +582,8 @@ function relatorioEstoque($opcao_relatorio) {
     $salvar_rel = (int) readline("->");  
 
     if ($salvar_rel == 1) {           
-        gerarRelatorio($opcao_relatorio, $relatorio);  
-        retornoMsgRelatorio();
+        gerarRelatorio($opcao_relatorio, $relatorio);          
+        retornoMsgRelatorio();        
     }
 }   
 
@@ -611,14 +611,14 @@ function relatorioMovimentacao($opcao_relatorio) {
         $id_prod = (int) readline("Informe o código do Produto: ");
 
         $desc_relatorio = "DE MOVIMENTAÇÃO DO ESTOQUE POR ITEM";
-        $sqlWhere = "WHERE id_prod = :id_prod "; 
+        $sqlWhere .= "WHERE id_prod = :id_prod "; 
     } else {
         echo "\n* Informe o período de data *\n";
         $data_mov_ini = readline("Data Inicial: ");         
         $data_mov_fim = readline("Data Final: ");
         
         $desc_relatorio = "DE MOVIMENTAÇÃO POR PERÍODO DE DATA";
-        $sqlWhere = "WHERE SUBSTR(data_mov, 1, 10) BETWEEN :data_mov_ini AND :data_mov_fim ";
+        $sqlWhere .= "WHERE SUBSTR(data_mov, 1, 10) >= :data_mov_ini AND SUBSTR(data_mov, 1, 10) <= :data_mov_fim ";
         $periodo = "Período de Data: ".$data_mov_ini." à ".$data_mov_fim;
     }    
 
@@ -656,7 +656,7 @@ function relatorioMovimentacao($opcao_relatorio) {
     $relatorio .= "|".mb_str_pad("RELATÓRIO ".$desc_relatorio, 85, " ", STR_PAD_BOTH)."|\n";    
     $relatorio .= "|".mb_str_pad($periodo, 85, " ", STR_PAD_BOTH)."|\n";
     $relatorio .= "|=====================================================================================|\n";
-    $relatorio .= registroLoja();                                                                      
+    $relatorio .= registroLoja(1);                                                                      
     $relatorio .= "|=====================================================================================|\n";
     $relatorio .= "|                                     REGISTRO(S)                                     |\n";
     $relatorio .= "|=====================================================================================|\n";
@@ -692,10 +692,10 @@ function relatorioMovimentacao($opcao_relatorio) {
     }    
 }
 
-function registroLoja() {
+function registroLoja($tipo_retorno) {
     include 'conexao/conexao.php';
 
-    $retorno = "";
+    $retorno_echo = "";    
     $sqlLoja = "SELECT l.nome_loja, l.cnpj_loja, l.contato_loja, l.ie_loja, e.rua, e.numero,
                 b.nome_bairro, b.cep_bairro, c.nome_cidade, est.uf_estado
                 FROM loja AS l
@@ -708,14 +708,25 @@ function registroLoja() {
     $reg = $retornoLoja->fetchAll(PDO::FETCH_OBJ);
 
     foreach ($reg as $rgLoja) {
-        $retorno .= "|Nome da Loja: ".mb_str_pad($rgLoja->nome_loja, 18, " ")."CNPJ: ".mb_str_pad(mascaraCpfCnpj($rgLoja->cnpj_loja), 22, " ")
-                     ."IE: ".mb_str_pad($rgLoja->ie_loja, 21, " ")."|\n";
-        $retorno .= "|Contato: ".mb_str_pad(mascaraTelefone($rgLoja->contato_loja), 23, " ")."Rua: ".mb_str_pad($rgLoja->rua, 23, " ")
-                     ."N° ".mb_str_pad($rgLoja->numero, 6, " "). "Bairro: ".mb_str_pad($rgLoja->nome_bairro, 8, " ")."|\n";
-        $retorno .= "|CEP: ".mb_str_pad($rgLoja->cep_bairro, 27, " ")."Município: ".mb_str_pad($rgLoja->nome_cidade."/".$rgLoja->uf_estado, 42, " ")."|\n";
+        $retorno_echo .= "|Nome da Loja: ".mb_str_pad($rgLoja->nome_loja, 18, " ")."CNPJ: ".mb_str_pad(mascaraCpfCnpj($rgLoja->cnpj_loja), 22, " ")
+                        ."IE: ".mb_str_pad($rgLoja->ie_loja, 21, " ")."|\n";
+        $retorno_echo .= "|Contato: ".mb_str_pad(mascaraTelefone($rgLoja->contato_loja), 23, " ")."Rua: ".mb_str_pad($rgLoja->rua, 23, " ")
+                        ."N° ".mb_str_pad($rgLoja->numero, 6, " "). "Bairro: ".mb_str_pad($rgLoja->nome_bairro, 8, " ")."|\n";
+        $retorno_echo .= "|CEP: ".mb_str_pad($rgLoja->cep_bairro, 27, " ")."Município: ".mb_str_pad($rgLoja->nome_cidade."/".$rgLoja->uf_estado, 42, " ")."|\n";
+        $retorno_array = [
+            "nome-loja" => $rgLoja->nome_loja,
+            "cnpj" => mascaraCpfCnpj($rgLoja->cnpj_loja),
+            "ie" => $rgLoja->ie_loja,
+            "contato" => mascaraTelefone($rgLoja->contato_loja),
+            "rua" => $rgLoja->rua,
+            "numero" => $rgLoja->numero,
+            "bairro" => $rgLoja->nome_bairro,
+            "cep" => $rgLoja->cep_bairro,
+            "municipio" => $rgLoja->nome_cidade."/".$rgLoja->uf_estado 
+        ];
     }
 
-    return $retorno;
+    return ($tipo_retorno == 1 ? $retorno_echo : $retorno_array);
 }
 
 function registroProduto($lengthProd, $lengthDesc) {

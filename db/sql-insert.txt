@@ -5598,7 +5598,7 @@ INSERT INTO `cidade` (`id_cidade`, `nome_cidade`, `id_estado`) VALUES
 (5564, 'Xambioá', 27);
 
 INSERT INTO `bairro` (`id_bairro`, `nome_bairro`, `cep_bairro`, `id_cidade`) VALUES 
-(1, 'Incra', '76920-000', 4378);
+(1, 'Incra', '76920000', 4378);
 
 INSERT INTO `endereco` (`id_endereco`, `rua`, `numero`, `complemento`, `id_bairro`) VALUES 
 (1, 'Rua Kabum', '9154', 'Loja', 1);
