@@ -16,7 +16,7 @@ function iniciarAplicacao() {
     while (true) {        
         system('clear');
         echo "|==================================================================|\n";
-        echo "|                          MENU PAPELARIA                          |\n";
+        echo "|                          MENU PAPELARIA 1235                     |\n";
         echo "|==================================================================|\n";
         echo "| ".mb_str_pad("(Digite 1) - Cadastro de Cliente.", 65, " ")."|\n";
         echo "| ".mb_str_pad("(Digite 2) - Cadastro de Fornecedor.", 65, " ")."|\n";
@@ -844,3 +844,5 @@ function mascaraTelefone($contato) {
     return $mascara_contato;
 }
 ?>
+
+#123456
